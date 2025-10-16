@@ -1,43 +1,58 @@
-🌿 Smart Garden – Hệ thống giám sát và điều khiển nhà kính thông minh
+🌿 Smart Garden – Hệ thống nhà kính thông minh
 🧩 Giới thiệu
 
-Smart Garden là một hệ thống giám sát và điều khiển tự động môi trường nhà kính, giúp người dùng theo dõi và điều chỉnh các yếu tố như nhiệt độ, độ ẩm, ánh sáng, và mực nước.
-Dự án sử dụng ESP32 làm bộ xử lý trung tâm, kết hợp với các cảm biến, relay, màn hình OLED và giao thức MQTT để hỗ trợ điều khiển – giám sát từ xa qua Internet.
+Smart Garden là hệ thống giám sát và điều khiển tự động môi trường nhà kính, cho phép theo dõi và điều chỉnh nhiệt độ, độ ẩm, ánh sáng và mực nước một cách thông minh.
+Dự án sử dụng ESP32 làm bộ xử lý trung tâm, kết hợp với cảm biến, màn hình OLED, module relay và giao thức MQTT để giám sát – điều khiển từ xa qua Internet.
 
-⚙️ Thành phần hệ thống
-Thành phần	Chức năng chính
-ESP32	Vi điều khiển trung tâm, kết nối WiFi và giao tiếp MQTT
-Cảm biến DHT22	Đo nhiệt độ và độ ẩm không khí
-Cảm biến HC-SR04	Đo mực nước trong bể chứa
-Cảm biến LDR	Đo cường độ ánh sáng
-Màn hình OLED SSD1306	Hiển thị thông tin cảm biến và trạng thái hệ thống
-Relay Module	Bật/tắt thiết bị (đèn, quạt, bơm, phun sương)
-Button (Nút nhấn)	Chuyển đổi chế độ hoặc điều khiển thủ công
-LED cảnh báo	Hiển thị trạng thái hoạt động của hệ thống
-🖥️ Tính năng chính
+☁️ Công nghệ IoT
 
-🌡️ Giám sát nhiệt độ, độ ẩm, ánh sáng, và mực nước theo thời gian thực
+ESP32 đóng vai trò vi điều khiển trung tâm, kết nối Wi-Fi để thu thập và truyền dữ liệu.
 
-💧 Tự động bật/tắt thiết bị (bơm, quạt, đèn) theo ngưỡng cài đặt
+Giao thức MQTT được sử dụng để:
 
-📡 Kết nối WiFi và giao tiếp MQTT để điều khiển, giám sát từ xa qua ứng dụng hoặc dashboard
+Gửi dữ liệu cảm biến lên broker.
 
-🧠 Hỗ trợ chế độ thủ công thông qua nút nhấn
+Nhận lệnh điều khiển thiết bị từ người dùng.
 
-📺 Màn hình OLED SSD1306 hiển thị thông tin cảm biến và trạng thái hệ thống
+Kiểm thử và giám sát qua công cụ MQTT.fx hoặc dashboard.
 
-🔔 LED cảnh báo hiển thị hoạt động hoặc lỗi của hệ thống
+🔌 Cảm biến và Cơ cấu chấp hành
 
-🧰 Phần mềm và thư viện sử dụng
+DHT22: Đo nhiệt độ và độ ẩm môi trường.
 
-Arduino IDE / PlatformIO
+LDR Sensor: Đo cường độ ánh sáng.
 
-Thư viện Arduino cho ESP32
+HC-SR04: Đo mực nước trong bể chứa.
 
-DHT sensor library
+Module Relay: Điều khiển bật/tắt thiết bị (đèn, quạt, bơm nước, phun sương) dựa trên dữ liệu cảm biến hoặc lệnh người dùng.
 
-Adafruit SSD1306 & GFX library
+Button (nút nhấn): Chuyển chế độ hoạt động (tự động/thủ công).
+
+LED cảnh báo: Hiển thị trạng thái hoạt động của hệ thống.
+
+🖥️ Hiển thị
+
+Màn hình OLED SSD1306 hiển thị trực tiếp thông tin cảm biến và trạng thái thiết bị.
+
+Cập nhật giá trị theo thời gian thực, giúp người dùng dễ dàng theo dõi điều kiện môi trường.
+
+📊 Kết quả đạt được
+
+Hoàn thiện mô hình mô phỏng nhà kính thông minh hoạt động ổn định.
+
+Thu thập và hiển thị dữ liệu cảm biến theo thời gian thực qua giao thức MQTT.
+
+Điều khiển thiết bị tự động (đèn, quạt, bơm) dựa trên ngưỡng cài đặt môi trường.
+
+Hiển thị thông tin cảm biến và trạng thái thiết bị rõ ràng trên màn hình OLED.
+
+MQTT hoạt động ổn định, cho phép kết nối từ xa và kiểm thử dễ dàng.
+
+Cấu trúc mã được tách biệt thành từng module, dễ mở rộng và bảo trì.
+
+
+
 
 PubSubClient (MQTT)
 
-NewPing (cho cảm biến HC-SR04)
+NewPing (HC-SR04)
