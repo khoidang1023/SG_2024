@@ -1,20 +1,22 @@
 🌿 Smart Garden – Hệ thống nhà kính thông minh
 🧩 Giới thiệu
 
-Smart Garden là hệ thống giám sát và điều khiển tự động môi trường nhà kính, cho phép theo dõi và điều chỉnh nhiệt độ, độ ẩm, ánh sáng và mực nước một cách thông minh.
-Dự án sử dụng ESP32 làm bộ xử lý trung tâm, kết hợp với cảm biến, màn hình OLED, module relay và giao thức MQTT để giám sát – điều khiển từ xa qua Internet.
+Smart Garden là một hệ thống giám sát và điều khiển tự động môi trường nhà kính, giúp người dùng theo dõi và điều chỉnh các yếu tố như nhiệt độ, độ ẩm, ánh sáng, và mực nước.
+Dự án sử dụng ESP32 làm bộ xử lý trung tâm, kết hợp với các cảm biến, relay, màn hình OLED và giao thức MQTT để hỗ trợ điều khiển – giám sát từ xa qua Internet.
 
-☁️ Công nghệ IoT
+🖥️ Tính năng chính
 
-ESP32 đóng vai trò vi điều khiển trung tâm, kết nối Wi-Fi để thu thập và truyền dữ liệu.
+🌡️ Giám sát nhiệt độ, độ ẩm, ánh sáng, và mực nước theo thời gian thực
 
-Giao thức MQTT được sử dụng để:
+💧 Tự động bật/tắt thiết bị (bơm, quạt, đèn) theo ngưỡng cài đặt
 
-Gửi dữ liệu cảm biến lên broker.
+📡 Kết nối WiFi và giao tiếp MQTT để điều khiển, giám sát từ xa qua ứng dụng hoặc dashboard
 
-Nhận lệnh điều khiển thiết bị từ người dùng.
+🧠 Hỗ trợ chế độ thủ công thông qua nút nhấn
 
-Kiểm thử và giám sát qua công cụ MQTT.fx hoặc dashboard.
+📺 Màn hình OLED SSD1306 hiển thị thông tin cảm biến và trạng thái hệ thống
+
+🔔 LED cảnh báo hiển thị hoạt động hoặc lỗi của hệ thống
 
 🔌 Cảm biến và Cơ cấu chấp hành
 
@@ -49,10 +51,3 @@ Hiển thị thông tin cảm biến và trạng thái thiết bị rõ ràng tr
 MQTT hoạt động ổn định, cho phép kết nối từ xa và kiểm thử dễ dàng.
 
 Cấu trúc mã được tách biệt thành từng module, dễ mở rộng và bảo trì.
-
-
-
-
-PubSubClient (MQTT)
-
-NewPing (HC-SR04)
